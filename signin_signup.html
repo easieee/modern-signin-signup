@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="assets/styles.css">
+    <title>Portfolio | Alec Salutem</title>
+</head>
+
+<body>
+    <div class="container" id="container">
+        <div class="form-container sign-up">
+            <div class="register_box">
+                <h1>Create Account</h1>
+                <div class="social-icons2">
+                    <a href="#" class="socicon"><i class="fa-brands fa-google-plus-g"></i></a>
+                    <a href="#" class="socicon"><i class="fa-brands fa-facebook-f"></i></a>
+                    <a href="#" class="socicon"><i class="fa-brands fa-github"></i></a>
+                    <a href="#" class="socicon"><i class="fa-brands fa-linkedin-in"></i></a>
+                </div>
+                <div class="opt_reg">
+                    <label>or use your email for registeration</label>
+                </div>
+                <div class="reg_input_box">
+                    <input type="text" id="sign_up" class="reginput_field" required>
+                    <span for="fname" class="regspan">First Name</span>
+                    <i class="fa-regular fa-user regicon"></i>
+                </div>
+                <div class="reg_input_box">
+                    <input type="text" id="sign_up" class="reginput_field" required>
+                    <span for="lname" class="regspan">Last Name</span>
+                    <i class="fa-regular fa-user regicon"></i>
+                </div>
+                <div class="reg_input_box">
+                    <input type="test" id="sign_up" class="reginput_field" required>
+                    <span for="email" class="regspan">Email</span>
+                    <i class="fa-regular fa-envelope regicon"></i>
+                </div>
+                <div class="reg_input_box">
+                    <input type="text" id="sign_up" class="reginput_field" required>
+                    <span for="user" class="regspan">Username</span>
+                    <i class="fa-regular fa-user regicon"></i>
+                </div>
+                <div class="reg_input_box">
+                    <input type="password" id="sign_up" class="reginput_field" required>
+                    <span for="pass" class="regspan">Password</span>
+                    <i class="fa-solid fa-lock regicon"></i>
+                </div>
+                <div class="reg_input_box">
+                    <input type="password" id="sign_up" class="reginput_field" required>
+                    <span for="pass" class="regspan">Confirm Password</span>
+                    <i class="fa-solid fa-lock regicon"></i>
+                </div>
+                <div>
+                    <button class="sbmt">Submit</button>
+                </div>
+            </div>
+        </div>
+        <div class="form-container sign-in">
+            <form>
+                <h1>Sign In</h1>
+                <div class="social-icons">
+                    
+                    <a href="#" class="socicon"><i class="fa-brands fa-google-plus-g"></i></a>
+                    <a href="#" class="socicon"><i class="fa-brands fa-facebook-f"></i></a>
+                    <a href="#" class="socicon"><i class="fa-brands fa-github"></i></a>
+                    <a href="#" class="socicon"><i class="fa-brands fa-linkedin-in"></i></a>
+                </div>
+                <div class="input_box">
+                    <input type="text" class="input_field" id="sign_in" required>
+                    <label for="user" class="label">Username</label>
+                    <i class="fa-regular fa-user icon"></i>
+                </div>
+                <div class="input_box">
+                    <input type="password" class="input_field" id="sign_in" required>
+                    <label for="pass" class="label">Password</label>
+                    <i class="fa-solid fa-lock icon"></i>
+                </div>
+                <div class="remember">
+                    <div class="checkbox-wrapper">
+                        <input id="_checkbox-26" type="checkbox">
+                        <label for="_checkbox-26">
+                            <div class="tick_mark"></div>
+                        </label>
+                    </div>
+                    <label class="remember_me">Remember</label>
+                    <div class="forgot">
+                        <label onclick="goCheck()" href="#">Forgot Password?</label>
+                    </div>
+                </div>
+                <div>
+                    <button class="lgn">Login</button>
+                </div>
+            </form>
+        </div>
+        <div class="toggle-container">
+            <div class="toggle">
+                <div class="toggle-panel toggle-left">
+                    <h2>Welcome Back!</h2>
+                    <p>Enter your personal details to use all of site features</p>
+                    <button onclick="clearInput()" class="hidden" id="login">Sign In</button>
+                </div>
+                <div class="toggle-panel toggle-right">
+                    <h2>Hello, Friend!</h2>
+                    <p>Register with your personal details to use all of site features</p>
+                    <button onclick="clearInput()" class="hidden" id="register">Sign Up</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script src="assets/script.js"></script>
+</body>
+
+</html>

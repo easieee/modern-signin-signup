@@ -1,0 +1,612 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body{
+    background-image: url("img/sunsetmtn.jpg");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    padding: 0 20px;
+}
+
+/* Sign-in */
+.container{
+    border: 3px solid skyblue;
+    border-radius: 10px;
+    backdrop-filter: blur(10px);
+    border-radius: 30px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.35);
+    position: relative;
+    overflow: hidden;
+    width: 900px;
+    height: 700px;
+}
+
+.container h1{
+    color: #ffffff;
+    font-size: 30px;
+    font-weight: 600;
+    padding: 25px 0;
+    text-align: center;
+    user-select: none;
+}
+
+.container h2{
+    color: #ffffff;
+    font-size: 30px;
+    font-weight: 500;
+    padding: 25px 0;
+    text-align: center;
+}
+
+.container p{
+    font-size: 16px;
+    line-height: 20px;
+    letter-spacing: 0.3px;
+    margin: 20px 0;
+}
+
+.container a{
+    color: #ffffff;
+    font-size: 13px;
+    text-decoration: none;
+    margin: 15px 0 10px;
+}
+
+
+.hidden{
+    background-color: transparent;
+    border-color: #fff;
+    color: #fff;
+    font-size: 20px;
+    padding: 10px 45px;
+    border: 2px solid;
+    border-radius: 8px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    margin-top: 10px;
+    cursor: pointer;
+}
+
+.container form{
+    display: flex;
+    width: 100%;
+    font-size: 20px;
+    color: #ffffff;
+    justify-content: center;
+    flex-direction: column;
+    padding: 0 20px;
+    height: 100%;
+}
+
+.container input{
+    margin: 5px 0;
+    padding: 10px 15px;
+    border-radius: 30px;
+    width: 100%;
+    height: 35px;
+    font-size: 18px;
+    background: transparent;
+    color: rgb(255, 255, 255);
+    font-weight: 500;
+    border: 2px solid skyblue;
+    outline: none;    
+}
+
+.input_box{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    padding: 20px 0;
+}
+
+
+.label{
+    position: absolute;
+    top: 30px;
+    left: 20px;
+    transition: .2s;
+    color: rgb(255, 255, 255);
+    user-select: none;
+    font-size: 18px;
+    text-align: center;
+}
+
+.label:hover,
+.label:valid{
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    font-size: 18px;
+    background-color: skyblue;
+    border-radius: 30px;
+    color: black;
+    padding: 0 10px;
+}
+
+.input_field:hover + .label,
+.input_field:valid + .label{
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    font-size: 18px;
+    background-color: skyblue;
+    border-radius: 30px;
+    color: black;
+    padding: 0 10px;
+}
+
+
+.lgn{
+    font: inherit;
+    width: 100%;
+    background-color: #2a2a2a;
+    border: 0;
+    color: #15252c;
+    border-radius: 8px;
+    font-size: 21.6px;
+    padding: 6px 16px;
+    font-weight: 600;
+    box-shadow:
+    inset 0 0.48px 0 0 #3a3a3a,
+    0 0.48px 0 0 #252525,
+    0 1px 0 0 #202020,
+    0 2px 0 0 #1c1c1c,
+    0 2px 0 0 #181818,
+    0 3.2px 0 0 #141414,
+    0 3.6px 0 0 #101010,
+    0 3.6px 6px 0 #070606;
+    background: linear-gradient(to right, lightpink, skyblue);
+    transition: 0.15s ease;
+    cursor: pointer;
+}
+
+.lgn:active{
+    translate: 0 3.6px;
+    box-shadow: 0 0.425em 0.5em 0 skyblue;
+}
+
+.signinicon{
+    position: absolute;
+    top: 45px;
+    right: 25px;
+    font-size: 20px;
+    color: white;
+}
+
+.form-container{
+    position: absolute;
+    align-items: center;
+    top: 0;
+    height: 100%;
+    transition: all 0.6s ease-in-out;
+}
+
+.sign-in{
+    left: 0;
+    width: 50%;
+    z-index: 2;
+}
+
+.container.active .sign-in{
+    transform: translateX(100%);
+    opacity: 0;
+}
+
+.icon{
+    position: absolute;
+    top: 35px;
+    right: 25px;
+    font-size: 16px;
+    color: white;
+}
+@keyframes move{
+    0%, 49.99%{
+        opacity: 0;
+        z-index: 1;
+    }
+    50%, 100%{
+        opacity: 1;
+        z-index: 5;
+    }
+}
+
+.social-icons{
+    text-align: center;
+}
+
+.social-icons a{
+    border: 1px solid #ccc;
+    border-radius: 20%;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 3px;
+    width: 40px;
+    height: 40px;
+}
+
+.toggle-container{
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: 50%;
+    height: 100%;
+    overflow: hidden;
+    transition: all 0.6s ease-in-out;
+    border-radius: 10% 0 0 10%;
+    z-index: 1000;
+}
+
+.container.active .toggle-container{
+    transform: translateX(-100%);
+    border-radius: 0 10% 10% 0;
+}
+
+.toggle{
+    background-color: #512da8;
+    height: 100%;
+    background: linear-gradient(to right, #5c6bc0, #512da8);
+    color: #fff;
+    position: relative;
+    left: -100%;
+    height: 100%;
+    width: 200%;
+    transform: translateX(0);
+    transition: all 0.6s ease-in-out;
+}
+
+.container.active .toggle{
+    transform: translateX(50%);
+}
+
+.toggle-panel{
+    position: absolute;
+    width: 50%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 0 30px;
+    text-align: center;
+    top: 0;
+    transform: translateX(0);
+    transition: all 0.6s ease-in-out;
+    user-select: none;
+}
+
+.toggle-left{
+    transform: translateX(-200%);
+}
+
+.container.active .toggle-left{
+    transform: translateX(0);
+}
+
+.toggle-right{
+    right: 0;
+    transform: translateX(0);
+}
+
+.container.active .toggle-right{
+    transform: translateX(200%);
+}
+.remember{
+    display: flex;
+    justify-content: flex-start;
+    margin-bottom: 30px;
+    font-size: 12px;
+    user-select: none; 
+    color: rgb(252, 252, 252);
+}
+
+.remember .remember_me{
+    font-size: 18px;
+    padding: 5px 0px 0px 5px;
+}
+
+.forgot{
+    font-size: 18px;
+    padding: 5px 0px 5px 110px;
+}
+
+.forgot label:hover{
+    text-decoration: underline;    
+    text-decoration-thickness: 3px;
+}
+
+.checkbox-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.checkbox-wrapper * {
+    -webkit-tap-highlight-color: transparent;
+    outline: none;
+    user-select: none;
+}
+  
+.checkbox-wrapper input[type="checkbox"] {
+    display: none;
+}
+  
+.checkbox-wrapper label {
+    --size: 25px;
+    --shadow: calc(var(--size) * .07) calc(var(--size) * .1);
+    position: relative;
+    display: block;
+    width: var(--size);
+    height: var(--size);
+    margin: 0 auto;
+    background-color: #4158D0;
+    background-image: linear-gradient(43deg, #4158D0 0%, #C850C0 46%, #FFCC70 100%);
+    border-radius: 50%;
+    cursor: pointer;
+    transition: 0.2s ease transform, 0.2s ease background-color,
+        0.2s ease box-shadow;
+    overflow: hidden;
+    z-index: 1;
+}
+  
+.checkbox-wrapper label:before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    right: 0;
+    left: 0;
+    width: calc(var(--size) * .7);
+    height: calc(var(--size) * .7);
+    margin: 0 auto;
+    background-color: #ff658c;
+    backdrop-filter: blur(10px);
+    transform: translateY(-50%);
+    border-radius: 50%;
+    box-shadow: inset 0 var(--shadow) #ffbeb8;
+    transition: 0.2s ease width, 0.2s ease height;
+}
+  
+.checkbox-wrapper label:hover:before {
+    width: calc(var(--size) * .55);
+    height: calc(var(--size) * .55);
+    box-shadow: inset 0 var(--shadow) #ff9d96;
+}
+  
+.checkbox-wrapper label:active {
+    transform: scale(0.9);
+}
+  
+.checkbox-wrapper .tick_mark {
+    position: absolute;
+    top: -1px;
+    right: 0;
+    left: calc(var(--size) * -.05);
+    width: calc(var(--size) * .6);
+    height: calc(var(--size) * .6);
+    margin: 0 auto;
+    margin-left: calc(var(--size) * .14);
+    transform: rotateZ(-40deg);
+}
+  
+.checkbox-wrapper .tick_mark:before,
+    .checkbox-wrapper .tick_mark:after {
+    content: "";
+    position: absolute;
+    background-color: #fff;
+    border-radius: 2px;
+    opacity: 0;
+    transition: 0.2s ease transform, 0.2s ease opacity;
+}
+  
+.checkbox-wrapper .tick_mark:before {
+    left: 0;
+    bottom: 0;
+    width: calc(var(--size) * .1);
+    height: calc(var(--size) * .3);
+    box-shadow: -2px 0 5px rgba(0, 0, 0, 0.23);
+    transform: translateY(calc(var(--size) * -.68));
+}
+  
+.checkbox-wrapper .tick_mark:after {
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: calc(var(--size) * .1);
+    box-shadow: 0 3px 5px rgba(0, 0, 0, 0.23);
+    transform: translateX(calc(var(--size) * .78));
+}
+  
+.checkbox-wrapper input[type="checkbox"]:checked + label {
+    background-color: #4158D0;
+    background-image: linear-gradient(43deg, #4158D0 0%, #C850C0 46%, #FFCC70 100%);
+    box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
+}
+  
+.checkbox-wrapper input[type="checkbox"]:checked + label:before {
+    width: 0;
+    height: 0;
+}
+  
+.checkbox-wrapper input[type="checkbox"]:checked + label .tick_mark:before,
+    .checkbox-wrapper input[type="checkbox"]:checked + label .tick_mark:after {
+    transform: translate(0);
+    opacity: 1;
+}
+
+/* Sign-up */
+
+.sign-up{
+    left: 0;
+    width: 50%;
+    opacity: 0;
+}
+
+.sign-up .register_box{
+    padding: 0px 20px;
+    height: 100%;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.opt_reg{
+    text-align: center;
+    padding: 20px 0;
+    font-size: 15px;
+    color: white;
+    font-weight: 500;
+}
+
+.sign-up .regspan{
+    position: absolute;
+    font-weight: bold;
+    top: 25px;
+    left: 20px;
+    transition: .2s;
+    font-size: small;
+    color: white;
+    user-select: none;
+}
+
+.regspan:hover,
+.regspan:valid{
+    position: absolute;
+    top: -10px;
+    left: 0px;
+    font-size: 18px;
+    background-color: skyblue;
+    border-radius: 30px;
+    color: black;
+    padding: 0 10px;
+}
+
+.reginput_field:hover + .regspan,
+.reginput_field:valid + .regspan{
+    position: absolute;
+    top: -10px;
+    left: 0px;
+    font-size: 18px;
+    background-color: skyblue;
+    border-radius: 30px;
+    color: black;
+    padding: 0 10px;
+}
+
+.reginput_field:hover + .regspan,
+.reginput_field:valid + .regspan{
+    position: absolute;
+    top: -10px;
+    left: 0px;
+    font-size: 18px;
+    background-color: skyblue;
+    border-radius: 30px;
+    color: black;
+    padding: 0 10px;
+}
+
+.container.active .sign-up{
+    transform: translateX(100%);
+    opacity: 1;
+    z-index: 5;
+    animation: move 0.6s;
+}
+
+.social-icons2{
+    text-align: center;
+}
+
+.social-icons2 a{
+    border: 1px solid #ccc;
+    border-radius: 20%;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 3px;
+    width: 40px;
+    height: 40px;
+}
+
+.reg_input_box{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    padding: 10px 0;
+}
+
+.reg_input_field{
+    width: 100%;
+    height: 55px;
+    font-size: 16px;
+    background: transparent;
+    color: white;
+    font-weight: 550;
+    padding-inline: 20px 50px;
+    border: 2px solid skyblue;
+    border-radius: 30px;
+    outline: none;
+}
+
+.reginput_field{
+    width: 100%;
+    height: 55px;
+    font-size: 16px;
+    background: transparent;
+    color: white;
+    font-weight: 550;
+    padding: 0px 50px 0px 20px;
+    border: 2px solid skyblue;
+    border-radius: 30px;
+    outline: none;
+}
+
+.regicon{
+    position: absolute;
+    top: 25px;
+    right: 35px;
+    font-size: 16px;
+    color: white;
+}
+
+
+.sbmt{
+    font: inherit;
+    width: 100%;
+    background-color: #2a2a2a;
+    border: 0;
+    color: #15252c;
+    border-radius: 8px;
+    font-size: 21.6px;
+    padding: 6px 16px;
+    font-weight: 600;
+    box-shadow:
+    inset 0 0.48px 0 0 #3a3a3a,
+    0 0.48px 0 0 #252525,
+    0 1px 0 0 #202020,
+    0 2px 0 0 #1c1c1c,
+    0 2px 0 0 #181818,
+    0 3.2px 0 0 #141414,
+    0 3.6px 0 0 #101010,
+    0 3.6px 6px 0 #0a0a0a;
+    background: linear-gradient(to right, lightpink, skyblue);
+    transition: 0.15s ease;
+    cursor: pointer;
+}
+
+.sbmt:active{
+    translate: 0 3.6px;
+    box-shadow: 0 0.425em 0.5em 0 skyblue;
+}
+
