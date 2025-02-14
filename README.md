@@ -1,3 +1,3 @@
 [!NOTE]
 
-![Alt text](screenshot.png)
+![Alt text](Screenshot.png)
